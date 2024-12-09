@@ -8,7 +8,14 @@ import Link from "next/link"
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen  text-black"
+    
+    style={{
+      backgroundImage: `url('images/background.jpeg')`,
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+    }}
+    >
       {/* Navigation */}
       <nav className="container mx-auto px-4 py-6 flex items-center justify-between">
         <div className="text-2xl font-bold">Soul Script</div>
@@ -18,16 +25,17 @@ export default function App() {
           <Link href="#" className="text-gray-400 hover:text-white">ABOUT US</Link>
           <Link href="#" className="text-gray-400 hover:text-white">SHOWCASE</Link>
         </div>
-        <Button className="bg-white text-black hover:bg-orange-500 hover:text-white">
+        <Link href="/chat"><Button className="bg-white text-black hover:bg-orange-500 hover:text-white">
           Let&apos;s get started
-        </Button>
+        </Button></Link>
+        
       </nav>
 
       {/* Hero Section */}
       <section className="container mx-auto px-4 py-12">
         <div className="relative text-center">
           <h1 className="text-8xl font-bold tracking-wider mb-4">SOUL SCRIPT.AI</h1>
-          <div className="text-orange-500 font-bold text-3xl tracking-wider opacity-50 mb-8">
+          <div className="text-[rgb(233_33_151)] font-bold text-3xl tracking-wider opacity-50 mb-8">
             Where life unfold in Codes
           </div>
          
@@ -35,7 +43,7 @@ export default function App() {
           {/* Main Character Image */}
           <div className="mt-12 relative flex justify-center">
             <Image
-              src="/images/robotic.png"
+              src="/images/pixelcut-new.png"
               alt="AI Character"
               width={800}
               height={600}
@@ -43,13 +51,11 @@ export default function App() {
             />
             {/* 001 Section */}
             <div className="absolute bottom-0 left-0 p-8 text-left">
-              <div className="text-6xl font-bold opacity-20">001</div>
               <h2 className="text-2xl font-bold mt-4">
-                MEET WITH CHARACTER<br />
-                AI GENERATOR.
+              Where Code Meets Imagination
               </h2>
-              <p className="text-gray-400 mt-4 max-w-md">
-                Let&apos;s get acquainted with a generator which has artificial intelligence that can help you create unique and creative 3D characters.
+              <p className="text-[rgb(88_2_152)] mt-4 max-w-md">
+              Dive into the world of AI-driven creativity. Soul Script AI empowers you to generate unique 3D characters, blending technology with imagination. Unlock endless design possibilities as you craft personalized characters effortlessly.
               </p>
               
               {/* VR Headset Image */}
@@ -71,41 +77,50 @@ export default function App() {
         </div>
       </section>
 
-      {/* Voice Commands Section */}
-      <section className="container mx-auto px-4 py-16">
-        <h2 className="text-4xl font-bold text-center mb-16">
-          COMPLETE DAILY CHARACTER DESIGN<br />
-          TASKS USING ONLY YOUR VOICE.
-        </h2>
-        
-        <div className="relative max-w-4xl mx-auto">
-          <div className="grid grid-cols-3 gap-8">
-            {[
-              "add a shadow from the top left",
-              "Hey CHAR.AI, turn accent color to red",
-              "Please up the contrast a bit for accessibility."
-            ].map((command, i) => (
-              <div
-                key={i}
-                className="bg-zinc-900 p-6 rounded-lg"
-              >
-                <div className="text-sm text-gray-400 mb-2">Run Complete Voice Command</div>
-                <div className="text-lg">{command}</div>
-                <div className="mt-4 flex justify-end">
-                  <div className="w-3 h-3 rounded-full bg-orange-500" />
-                </div>
-              </div>
-            ))}
+      {/* Chat Interaction Section */}
+<section className="container mx-auto px-4 py-16">
+  <h2 className="text-4xl font-bold text-center mb-16">
+    CHAT WITH SOUL SCRIPT AI<br />
+    TO DESIGN AND CUSTOMIZE YOUR CHARACTERS.
+  </h2>
+
+  {/* Soul Script AI Introduction */}
+  <div className="text-lg text-center mb-12">
+    <p>
+      With <strong>Soul Script AI</strong>, you can now engage in intelligent, dynamic conversations to design and personalize your characters. Just like having a conversation with a creative assistant, Soul Script AI allows you to specify design choices, tweak details, and customize your characters by simply chatting with the AI.
+    </p>
+    
+  </div>
+
+  <div className="relative max-w-4xl mx-auto">
+    <div className="grid grid-cols-3 gap-8">
+      {[
+        "Help me design a character with green eyes and blonde hair",
+        "Can you make my character's outfit more futuristic?",
+        "I want to add a glowing aura around my character."
+      ].map((command, i) => (
+        <div
+          key={i}
+          className="bg-light p-6 rounded-lg"
+        >
+          <div className="text-sm text-dark mb-2">Chat-Based Command</div>
+          <div className="text-lg">{command}</div>
+          <div className="mt-4 flex justify-end">
+            <div className="w-3 h-3 rounded-full bg-orange-500" />
           </div>
-          
-          <button className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-12 w-10 h-10 bg-zinc-800 rounded-full flex items-center justify-center">
-            <ChevronLeft className="w-6 h-6" />
-          </button>
-          <button className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-12 w-10 h-10 bg-zinc-800 rounded-full flex items-center justify-center">
-            <ChevronRight className="w-6 h-6" />
-          </button>
         </div>
-      </section>
+      ))}
+    </div>
+
+    <button className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-12 w-10 h-10 bg-light rounded-full flex items-center justify-center">
+      <ChevronLeft className="w-6 h-6" />
+    </button>
+    <button className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-12 w-10 h-10 bg-light rounded-full flex items-center justify-center">
+      <ChevronRight className="w-6 h-6" />
+    </button>
+  </div>
+</section>
+
 
       {/* Early Access Section */}
       <section className="container mx-auto px-4 py-16">
@@ -121,27 +136,22 @@ export default function App() {
               SUBMIT
             </Button>
           </div>
-          <p className="text-center text-sm text-gray-400 mt-4">
-            by submitting your email, you agree with our{" "}
-            <Link href="#" className="text-gray-300 hover:text-white">terms</Link>
-            {" "}and{" "}
-            <Link href="#" className="text-orange-500 hover:text-orange-400">agreement</Link>
-          </p>
+          
         </div>
       </section>
 
       {/* Footer */}
       <footer className="container mx-auto px-4 py-8 mt-16 border-t border-white/10">
         <div className="flex justify-between items-center">
-          <div className="text-sm text-gray-400">
+          <div className="text-sm text-black">
             all right reserved @char.ai
           </div>
           <div className="flex space-x-8">
-            <Link href="#" className="text-gray-400 hover:text-white">PRICING</Link>
-            <Link href="#" className="text-gray-400 hover:text-white">ABOUT US</Link>
-            <Link href="#" className="text-gray-400 hover:text-white">SHOWCASE</Link>
+            <Link href="#" className="text-black hover:text-white">PRICING</Link>
+            <Link href="#" className="text-black hover:text-white">ABOUT US</Link>
+            <Link href="#" className="text-black hover:text-white">SHOWCASE</Link>
           </div>
-          <div className="text-sm text-gray-400">
+          <div className="text-sm text-black">
             CONTACT@CHAR.AI
           </div>
         </div>
